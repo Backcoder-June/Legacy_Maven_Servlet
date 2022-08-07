@@ -1,4 +1,4 @@
-package Servlettest;
+package Servlettest.DTO;
 
 public class testDTO {
 
@@ -8,10 +8,9 @@ public class testDTO {
 
     @Override
     public String toString() {
-        return "testDTO{" +
-                "id='" + id + '\'' +
-                ", pw='" + pw + '\'' +
-                ", name='" + name + '\'' +
+        return "회원{" +
+                "id : '" + id + '\'' +
+                ", name : '" + name + '\'' +
                 '}';
     }
 

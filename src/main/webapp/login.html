@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+<form action="login" id="loginform">
+
+  아이디입력 : <input type="text" name="id" id="id">
+  암호입력 : <input type="password" name="pw" id="pw">
+
+  <input type="hidden" id="role" name="role">
+
+  <input type="submit" value="로그인">
+
+</form>
+
+<br>
+<a href="join.html">회원가입</a>
+<br>
+<a href="http://localhost:8090/webServlet_war/members">회원목록 조회</a>
+<br>
+<br>
+<br>
+<a href="delete.html">회원탈퇴</a>
+
+
+<script>
+
+  window.onload = function (){
+
+    document.querySelector("#loginform").addEventListener("submit",
+            function(){
+
+      if(document.querySelector("#id").value =='admin' ||
+              document.querySelector("#id").value == 'adm'){
+        document.querySelector("#role").value = 'admin';
+      }else {
+        document.querySelector("#role").value = 'user';
+      }
+            }
+            , false );
+
+
+
+
+  }
+
+
+
+</script>
+
+
+
+
+
+</body>
+</html>

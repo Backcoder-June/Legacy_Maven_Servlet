@@ -1,4 +1,7 @@
-package Servlettest;
+package Servlettest.Service;
+
+import Servlettest.DAO.testDAO;
+import Servlettest.DTO.testDTO;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -8,28 +11,21 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.ArrayList;
 
-@WebServlet("/hello")
-public class testServlet extends HttpServlet {
-
-
+@WebServlet("/members")
+public class selectAll_Servlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-        testDAO dao = new testDAO();
-        ArrayList<testDTO> selectAll = dao.test();
-
-
-//        req.setCharacterEncoding("UTF-8");
         resp.setContentType("text/html;charset=UTF-8");
 
-        resp.getWriter().println("헬로우 Servlet!");
+        testDAO dao = new testDAO();
+        ArrayList<testDTO> selectAll = dao.selectAll();
+
+        resp.getWriter().println("전체회원 목록<br>");
 
         for (testDTO dto: selectAll
-             ) {
-
-            resp.getWriter().println(dto + "<br>");
-        }
+             ) { resp.getWriter().println(dto + "<br>"); }
 
 
     }
