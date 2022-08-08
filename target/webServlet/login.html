@@ -9,26 +9,46 @@
 </head>
 <body>
 
+<div style="margin-left: 20px; width: 300px;" >
 <form action="login" id="loginform">
 
-  아이디입력 : <input type="text" name="id" id="id">
-  암호입력 : <input type="password" name="pw" id="pw">
+    <table border="5">
+        <caption> <h2> [ Login ] </h2> </caption>
+        <tr><th>아이디:&nbsp; &nbsp;&nbsp;<input type="text" id="id" name="id"></th></tr>
+        <tr><th>비밀번호 : <input type="password" id="pw" name="pw"></th></tr>
+    </table>
 
   <input type="hidden" id="role" name="role">
 
+    <br>
   <input type="submit" value="로그인">
 
 </form>
 
+</div>
 <br>
-<a href="join.html">회원가입</a>
+<hr>
 <br>
-<a href="http://localhost:8090/webServlet_war/members">회원목록 조회</a>
-<br>
-<br>
-<br>
-<a href="delete.html">회원탈퇴</a>
 
+<div>
+    <ul>
+        <li>
+<a href="join.html">회원가입</a>
+        </li>
+<br>
+<br>
+        <li>
+<a href="http://localhost:8090/webServlet_war/members">회원목록 조회</a>
+        </li>
+<br>
+<br>
+<br>
+<br>
+        <li>
+<a href="delete.html">회원탈퇴</a>
+        </li>
+    </ul>
+</div>
 
 <script>
 
