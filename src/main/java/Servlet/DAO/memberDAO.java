@@ -327,5 +327,41 @@ finally { try {con.close(); } catch (Exception e) {} }
 
 
 
+    public int edit(memberDTO dto) {
+
+        Connection con = null;
+
+        int editResult = 0;
+        try {
+            Context initcontext = new InitialContext();
+            Context envContext = (Context) initcontext.lookup("java:/comp/env");
+            DataSource ds = (DataSource) envContext.lookup("jdbc/backdb");
+            con = ds.getConnection();
+
+//sql
+            String sql = "update servletmember set name = ? where id = ?";
+
+            PreparedStatement pr = con.prepareStatement(sql);
+
+            pr.setString(1,dto.getName());
+            pr.setString(2,dto.getId());
+
+            editResult = pr.executeUpdate();
+
+
+
+        } catch ( Exception e) { e.printStackTrace(); }
+
+        finally { try { con.close(); } catch ( Exception e) {} }
+
+        return editResult;
+
+    }
+
+
+
+
+
+
 //
 }
