@@ -9,28 +9,36 @@ import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.io.PrintWriter;
 
-@WebServlet("/bank")
-public class BankServlet extends HttpServlet {
-
+@WebServlet("/logout")
+public class LogoutServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+
         resp.setContentType("text/html; charset=utf-8");
+        PrintWriter writer = resp.getWriter();
 
         HttpSession session = req.getSession();
 
-        String sessionid = (String)session.getAttribute("sessionid");
+
+            String sessionid = (String) session.getAttribute("sessionid");
 
 
-        PrintWriter writer = resp.getWriter();
 
+        String output = "";
 
         if (sessionid == null) {
-            writer.println("로그인 후 이용해 주세요.");
+         writer.println("로그인 된 정보가 없습니다.");
         } else {
-            writer.println("Bank 서블릿 아이디 " + sessionid + "인증. 5분간 유효");
-        }
+            output += sessionid + "<h2>님 로그아웃 되었습니다.</h2> <br>";
+            session.removeAttribute("sessionid");
+            //session.invalidate();
+            //session.setMaxInactiveInterval(0);
 
-        session.setMaxInactiveInterval(60*2);
+            output += "<a href = login.html > 홈으로 </a><br>";
+
+            writer.println(output);
+
+        }
 
     }
 }
