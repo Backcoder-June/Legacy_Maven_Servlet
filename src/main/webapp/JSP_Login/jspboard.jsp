@@ -13,10 +13,7 @@
 <body>
 
 <%
-    HttpSession session1 = request.getSession();
-
-    String userid = (String)session1.getAttribute("userid");
-
+    String userid = (String)session.getAttribute("userid");
 %>
 
 <h1> Board </h1>

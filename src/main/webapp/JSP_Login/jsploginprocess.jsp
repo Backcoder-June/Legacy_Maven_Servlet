@@ -24,8 +24,7 @@ String role = request.getParameter("role");
 
     if (condition == 2) {
 
-        HttpSession loginsession = request.getSession();
-        loginsession.setAttribute("userid", id);
+        session.setAttribute("userid", id);
 
         if (role.equals("admin")) { %>
  <h1><%=id%></h1> 관리자님 로그인 되셨습니다.

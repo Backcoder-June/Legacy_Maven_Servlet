@@ -17,14 +17,14 @@ String id = request.getParameter("id");
 String pw = request.getParameter("pw");
 String role = request.getParameter("role");
 
+
   memberDAO dao = new memberDAO();
   int condition = dao.login(id,pw);
 
 
     if (condition == 2) {
 
-        HttpSession loginsession = request.getSession();
-        loginsession.setAttribute("userid", id);
+        session.setAttribute("userid", id);
 
         if (role.equals("admin")) { %>
  <h1><%=id%></h1> 관리자님 로그인 되셨습니다.

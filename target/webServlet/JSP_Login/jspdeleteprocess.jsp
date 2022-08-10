@@ -21,8 +21,7 @@
   int condition = dao.login(id, pw);
 
   if (condition == 2) {
-    HttpSession session1 = request.getSession();
-    String userid = (String)session1.getAttribute("userid");
+    String userid = (String)session.getAttribute("userid");
 
     int deleteResult = dao.delete(id);
     if (deleteResult>0){ %>

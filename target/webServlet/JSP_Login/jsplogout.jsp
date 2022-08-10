@@ -13,7 +13,6 @@
 <body>
 
 <%
-  HttpSession session2 = request.getSession();
 
   String logoutid = (String) session.getAttribute("userid");
 
