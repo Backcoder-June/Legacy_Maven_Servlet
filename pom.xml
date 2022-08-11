@@ -6,11 +6,23 @@
   <packaging>war</packaging>
   <version>1.0-SNAPSHOT</version>
 
+
+<!--
+    <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+        <modelVersion>4.0.0</modelVersion>
+        <groupId>org.apache.tomcat</groupId>
+        <artifactId>tomcat-catalina</artifactId>
+        <version>9.0.65</version>
+        <description>Tomcat Servlet Engine Core Classes and Standard implementations</description>
+        <url>https://tomcat.apache.org/</url>
+-->
+
   <properties>
 <!--    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>-->
     <maven.compiler.source>11</maven.compiler.source>
     <maven.compiler.target>11</maven.compiler.target>
-    <javax.servlet-api-version>4.0.1</javax.servlet-api-version>
+<!--    <javax.servlet.jsp-api-version>2.3.3</javax.servlet.jsp-api-version>-->
+<!--    <javax.servlet-api-version>4.0.1</javax.servlet-api-version>-->
     <junit-version>3.8.1</junit-version>
   </properties>
 
@@ -19,15 +31,18 @@
 
 
   <dependencies>
+<!--
 
-<!--     https://mvnrepository.com/artifact/javax.servlet/javax.servlet-api -->
+    https://mvnrepository.com/artifact/javax.servlet/javax.servlet-api &ndash;&gt;
     <dependency>
       <groupId>javax.servlet</groupId>
       <artifactId>javax.servlet-api</artifactId>
       <version>4.0.1</version>
       <scope>provided</scope>
     </dependency>
+-->
 
+<!--
 
       <dependency>
           <groupId>javax.servlet.jsp</groupId>
@@ -35,6 +50,17 @@
           <version>2.3.3</version>
           <scope>provided</scope>
       </dependency>
+-->
+
+      <!-- https://mvnrepository.com/artifact/org.apache.tomcat/tomcat-catalina -->
+      <dependency>
+          <groupId>org.apache.tomcat</groupId>
+          <artifactId>tomcat-catalina</artifactId>
+          <version>9.0.65</version>
+          <scope>provided</scope>
+      </dependency>
+
+
 
 
 
