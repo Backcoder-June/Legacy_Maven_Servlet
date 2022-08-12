@@ -48,7 +48,13 @@
 <h3>아이디 : <jsp:getProperty name="dto" property="id"/>     </h3>
 <h3>비밀번호 : <jsp:getProperty name="dto" property="pw" />   </h3>
 
+<hr>
+<%
+dto.getId();
+%>
 
+
+${dto.id}
 
 </body>
 </html>
