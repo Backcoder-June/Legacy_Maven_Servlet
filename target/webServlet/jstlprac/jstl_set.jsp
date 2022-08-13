@@ -31,12 +31,17 @@
 <c:set var="id2" value="<%=nick%>"/>
 ${id2} : 자바에서 JSTL변수를 통해 EL로 보여주는 변수 <br>
 
+<%-- 자바 => EL 가져온거 자바 메소드들 사용 가능 --%>
+${id2.toUpperCase()}
+
+
 <%-- JSTL변수 당연히 JSTL에서 가져다 쓸 수 있다.--%>
 <c:set var="editpw" value="${pw+200}"/>
 
 ${editpw} : jstl 변수 jstl에서 사용해서 수정 <br>
 
 
+<%--url--%>
 나한테 요청한 클라이언트 ip <%=request.getRemoteAddr()%> <Br>
 나한테 요청한 파일명  <%=request.getRequestURI()%> <br>
 == <br>

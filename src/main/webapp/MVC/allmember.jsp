@@ -15,7 +15,7 @@
 </head>
 <body>
 
-${sessionScope.id} 님 어서오세요
+${empty sessionScope.userid? "Guest" : sessionScope.userid} 님 어서오세요
 <table border="5">
 <c:forEach items="${allmember}" var="dto" >
   <tr>
@@ -30,7 +30,7 @@ ${sessionScope.id} 님 어서오세요
 
 
 
-<br> <a href='jsplogin.jsp'>홈으로</a>
+<br> <a href='http://localhost:8090/webServlet_war_exploded/MVC/logined_Home.jsp'>홈으로</a>
 
 </body>
 </html>

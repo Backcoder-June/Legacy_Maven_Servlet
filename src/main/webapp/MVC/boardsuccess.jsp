@@ -11,12 +11,13 @@
     <title>success</title>
 </head>
 <body>
-
+<h1> 게시판 작성 내용 </h1>
 제목 : ${param.title} <br>
 내용 : ${param.contents} <br>
 작성자 : ${param.writer}<br>
 
-
+<br>
+<a href="http://localhost:8090/webServlet_war_exploded/MVC/logined_Home.jsp">홈으로</a>
 
 
 </body>

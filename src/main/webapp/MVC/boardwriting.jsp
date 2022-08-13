@@ -28,12 +28,16 @@
 <tr><th>제목</th><td><input type ='text' name = 'title'></td></tr>
 <tr><th>내용</th><td><textarea name = 'contents' rows=5 cols=50></textarea></td></tr>
 <tr><th>작성자</th><td><input type ='text' name = 'writer'
-value="${sessionScope.id}"></td></tr>
+value="${empty sessionScope.userid? "Guest" :
+        sessionScope.userid }"></td></tr>
 </table>
 
     <input type="submit" value="작성">
 </form>
 
+<br>
+
+<a href="http://localhost:8090/webServlet_war_exploded/MVC/logined_Home.jsp">홈으로</a>
 
 </body>
 </html>

@@ -32,7 +32,7 @@
   </c:if>
 
   <c:if test="${param.age < 1}">
-    <h1> ${param.name} 님은 외계인 입니까? </h1>
+    <h1> ${param.name} 님 올바르지 않은 입력입니다. </h1>
   </c:if>
 </c:if>
 

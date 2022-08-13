@@ -14,16 +14,16 @@
 <body>
 
 <%--url 태그 선언, 만들어만 두기 --%>
-<c:url var="mypage" value="jstlloginprocess.jsp" />
+<c:url var="mypage" value="jstl_if_choose.jsp" />
 <%----%>
-
 <%--
-<c:import url="${mypage}">
+
+<c:import url="jstl_if_choose.jsp">
 <c:param name="name" value="jho"/>
 <c:param name="age" value="100"/>
 </c:import>
---%>
 
+--%>
 import 니까 JSP include 개념으로
 저 url 페이지를 아예 포함해서 현재 페이지로 가져오는 것
 import 할때 사이에 param으로 변수도 같이 import 도 할 수 있음

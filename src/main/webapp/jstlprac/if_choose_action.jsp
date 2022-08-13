@@ -12,7 +12,7 @@
 </head>
 <body>
 
-<form action="jstlloginprocess.jsp" method="get">
+<form action="jstl_if_choose.jsp" method="get">
   이름 :<input type=text name="name" ><br>
   나이 :<input type=text name="age" ><br>
   <input type=submit value="성인인증" ><br>

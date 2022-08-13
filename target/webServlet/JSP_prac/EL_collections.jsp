@@ -17,9 +17,11 @@
 
 <%
     String[] color = {"red", "black", "white", "green", "gray"};
-//    pageContext.setAttribute("color", color);
+    pageContext.setAttribute("color", color);
+
 %>
 
+${color[1]}
 
 
 <%--기본 반복문 + count index vs 사용--%>
@@ -61,7 +63,7 @@
 
 
 
-
+<%-- 자바 메소드 사용 가능--%>
 ${color[0].toUpperCase()} <br>
 ${color[2].charAt(1)} <br>
 ${color[4].equals("gray")} <br>
@@ -76,6 +78,7 @@ ${color[4].equals("gray")} <br>
 <jsp:setProperty name="dto4" property="id" value="넣어둔id"/>
 --%>
 
+
 <%
     memberlist.add(new memberDTO("mem1", "1111", "hoy"));
     memberlist.add(new memberDTO("mem2", "2222", "boy"));
@@ -83,6 +86,7 @@ ${color[4].equals("gray")} <br>
 //    memberlist.add(dto4);
 
 %>
+
 
 <table border="5">
 <c:forEach items="${memberlist}" var="member" >
