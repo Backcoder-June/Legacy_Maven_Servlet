@@ -15,6 +15,9 @@ import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.util.ArrayList;
 
+
+//TODO : 예외처리, Post처리, 수정권한 세션으로 주기, 게시물 삭제 기능
+
 @WebServlet("/starting")
 public class Controller extends HttpServlet {
     @Override
@@ -51,6 +54,8 @@ public class Controller extends HttpServlet {
             }
         }
 
+
+        //로그아웃  세션지우기
         if (service.equalsIgnoreCase("로그아웃")) {
             HttpSession logoutSession = req.getSession();
             logoutSession.removeAttribute("userid");
@@ -58,6 +63,7 @@ public class Controller extends HttpServlet {
         }
 
 
+        //전체회원조회
         if (service.equalsIgnoreCase("memberlist")) {
             memberDAO dao = new memberDAO();
             ArrayList<memberDTO> list = dao.selectAll();
@@ -66,6 +72,7 @@ public class Controller extends HttpServlet {
         }
 
 
+        //전체 게시판 조회
         if (service.equalsIgnoreCase("allboard")) {
             BoardDAO bdao = new BoardDAO();
 
@@ -79,7 +86,8 @@ public class Controller extends HttpServlet {
             jspfile = "/MVC/boardwriting.jsp";
         }
 
-        // 여기 post 로 서블릿 따로 메소드 하나 짜서 옮기자
+        // post 로 옮길것들 따로 다 모아서 getPost로 옮기면 된다.
+        // para 테스트용도로 일단 get
         if (service.equalsIgnoreCase("작성")) {
             BoardDTO boardDTO = new BoardDTO();
 
@@ -109,6 +117,7 @@ public class Controller extends HttpServlet {
 
         }
 
+        //회원탈퇴
         if (service.equalsIgnoreCase("회원탈퇴")) {
 
             memberDAO dao = new memberDAO();
@@ -129,7 +138,7 @@ public class Controller extends HttpServlet {
         }
 
 
-        // 내 게시물
+        // 게시물 하나씩 보기
         if (service.equalsIgnoreCase("myboard")) {
             BoardDAO dao = new BoardDAO();
 
@@ -166,6 +175,7 @@ public class Controller extends HttpServlet {
              jspfile = "/MVC/myboard.jsp";
         }
 
+        // 본인이 작성한 게시판 글 목록
         if (service.equalsIgnoreCase("FBI")) {
             HttpSession session2 = req.getSession();
             String sessionid = (String)session2.getAttribute("userid");
