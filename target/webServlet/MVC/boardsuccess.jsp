@@ -11,11 +11,25 @@
     <title>success</title>
 </head>
 <body>
-<h1> 게시판 작성 내용 </h1>
-제목 : ${param.title} <br>
-내용 : ${param.contents} <br>
-작성자 : ${param.writer}<br>
 
+<h1> 내가 작성한 글 보기 </h1>
+<table border="5">
+    <tr>
+        <th>제목</th>
+        <td>${param.title}</td>
+    </tr>
+    <tr>
+        <th>내용</th>
+        <td>${param.contents}</td>
+
+    </tr>
+    <tr>
+        <th>작성자</th>
+        <td>${param.writer}</td>
+    </tr>
+
+
+</table>
 <br>
 <a href="http://localhost:8090/webServlet_war_exploded/MVC/logined_Home.jsp">홈으로</a>
 

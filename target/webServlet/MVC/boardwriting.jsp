@@ -23,16 +23,16 @@
 
 <h1> Board </h1>
 
-<form action="MVC/boardsuccess.jsp" >
+<form action="http://localhost:8090/webServlet_war_exploded/starting" method="get">
 <table border = 5>
 <tr><th>제목</th><td><input type ='text' name = 'title'></td></tr>
 <tr><th>내용</th><td><textarea name = 'contents' rows=5 cols=50></textarea></td></tr>
 <tr><th>작성자</th><td><input type ='text' name = 'writer'
 value="${empty sessionScope.userid? "Guest" :
-        sessionScope.userid }"></td></tr>
+        sessionScope.userid }" readonly></td></tr>
 </table>
 
-    <input type="submit" value="작성">
+    <input type="submit" value="작성" name="menu">
 </form>
 
 <br>

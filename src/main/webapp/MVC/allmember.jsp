@@ -17,10 +17,13 @@
 
 ${empty sessionScope.userid? "Guest" : sessionScope.userid} 님 어서오세요
 <table border="5">
+  <tr>
+    <th>아이디</th>
+    <th>이름</th>
+  </tr>
 <c:forEach items="${allmember}" var="dto" >
   <tr>
     <td>${dto.id}</td>
-    <td>${dto.pw}</td>
     <td>${dto.name}</td>
   </tr>
 </c:forEach>
